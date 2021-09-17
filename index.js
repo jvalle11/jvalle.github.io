@@ -1,9 +1,18 @@
 // Setup basic express server
 const express = require('express');
+const { access } = require('fs');
 const app = express();
 const path = require('path');
 const server = require('http').createServer(app);
-const io = require('socket.io')(server);
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "http://44.194.150.165:4000",
+    methods: ["GET", "POST"]
+  }
+});
+
+//server.listen(3000);
+
 const port = process.env.PORT || 3000;
 
 
@@ -14,24 +23,16 @@ server.listen(port, () => {
 
 // Routing
 
-const io = require("socket.io")(httpServer, {
-  allowRequest: (req, callback) => {
-    const noOriginHeader = req.headers.origin === undefined;
-    callback(null, noOriginHeader);
-  }
-});
-
-httpServer.listen(3000);
-
-res.setHeader('Access-Control-Allow-Origin', '*');
-res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-res.setHeader('Access-Control-Allow-Credentials', true);
-
-
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+//my code
+// function myfunc(){
+//   document.getElementById("demo").innerHTML = "test";
+// }
+// Window.onload = function(){
+//   var btn = document.getElementById("myButton");
+//   btn.onclick = myfunc;
+// }
 
 // Chatroom
 
@@ -46,8 +47,14 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('new message', {
       username: socket.username,
       message: data
+      
     });
+
   });
+  //on connect? NOT WORKING
+  // socket.on('connection'), () => {
+  //   socket.broadcast.emit('new message', 'test1');
+  // }
 
   // when the client emits 'add user', this listens and executes
   socket.on('add user', (username) => {

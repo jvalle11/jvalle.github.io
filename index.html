@@ -10,9 +10,10 @@ title: Home
     <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body>
-    <h1>{{ "Welcome To Me!" | downcase }}</h1>
+    <h1>{{ "Welcome!" | upcase }}</h1>
     <ul class="pages">
       <li class="chat page">
+        <div class="usernametext" id="usernametext">User Name:</div>
         <div class="chatArea">
           <ul class="messages"></ul>
         </div>
@@ -20,16 +21,20 @@ title: Home
       </li>
       <li class="login page">
         <div class="form">
-          <h3 class="title">What's your nickname?</h3>
-          <input class="usernameInput" type="text" maxlength="14" />
+          <h3 class="title">Enter a username...</h3>
+          <input class="usernameInput" type="text" maxlength="14"/>
+          <button id="myButton" class="button"><span>TRY IT</span></button>
+          <p id="demo"></p>
         </div>
       </li>
     </ul>
-  
+
+
+
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    
-      <script src="socket.io/socket.io.js"></script>
-     
+    <script src="socket.io/socket.io.js"></script>
     <script src="public/main.js"></script>
+
+      
   </body>
 </html>

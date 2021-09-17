@@ -11,7 +11,50 @@
   
 </head>
 
+<p id="test"></p>
+<div class="counter" id="counter">Just Arrived.</div>
+
+<script>
+  var seconds = 0;
+  var min = 0;
+  var el = document.getElementById('counter');
+
+  function incrementSeconds() 
+  {
+    seconds += 1;
+    if(seconds>1){
+    el.innerText = "You have been here for " + seconds + " seconds.";
+    }
+  // if(seconds>60){
+  //     seconds = 0;
+  //     min += 1;
+  //     el.innerHTML += "You have been here for " + min + " min: " + seconds + " seconds";
+      
+  // }
+  }
+
+
+var cancel = setInterval(incrementSeconds, 1000);
+
+
+document.body.style.backgroundColor = "green";
+</script>
+<div class="colorStuff">
+<h2>Change background color!</h2>
+<input type="color" id="colorInput">
+<button id="colorButton" class="colorButton" value="click to change color" onclick="changeColor()">
+ </div>
+
+<script>
+  document.body.style.backgroundImage = "";
+  function changeColor(){
+    let color = document.getElementById("colorInput").value;
+    document.body.style.backgroundColor = color;
+  }
+</script>
+
 </html>
+
   
 <body>
     {% include navigation.html %}

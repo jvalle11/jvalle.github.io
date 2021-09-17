@@ -1,4 +1,4 @@
-$(function() {
+$(function main () {
     const FADE_TIME = 150; // ms
     const TYPING_TIMER_LENGTH = 400; // ms
     const COLORS = [
@@ -8,6 +8,15 @@ $(function() {
     ];
 
     //my own code
+    // function myfunc(){
+    //   document.getElementById("demo").innerHTML = "test";
+    // }
+    // Window.onload = function(){
+    //   var btn = document.getElementById("myButton");
+    //   btn.onclick = myfunc;
+    // }
+    
+    console.log(      );  
 
   
   
@@ -16,7 +25,7 @@ $(function() {
     const $usernameInput = $('.usernameInput'); // Input for username
     const $messages = $('.messages');           // Messages area
     const $inputMessage = $('.inputMessage');   // Input message input box
-  
+
     const $loginPage = $('.login.page');        // The login page
     const $chatPage = $('.chat.page');          // The chatroom page
   
@@ -31,12 +40,17 @@ $(function() {
   
     const addParticipantsMessage = (data) => {
       let message = '';
+      let message2 = "";
+      let blank = "";
       if (data.numUsers === 1) {
-        message += `there's 1 participant`;
+        message2 += `it's just you`;
+        message += "welcome " + username + " to the chat!";
       } else {
         message += `there are ${data.numUsers} participants`;
       }
       log(message);
+      log(blank);
+      log(message2);
     }
   
     // Sets the client's username
@@ -54,6 +68,20 @@ $(function() {
         socket.emit('add user', username);
       }
     }
+
+    //chat bot
+    const chatbot = () => {
+      let message = "";
+      let msg2 = "";
+      if (username){
+      message += "welcome " + username + " to my chat!";
+      msg2 += "type -commands to see a list of all commands"; 
+      socket.emit(message);
+      socket.emit(msg2);
+      }
+    }
+    chatbot();
+    
   
     // Sends a chat message
     const sendMessage = () => {
@@ -66,6 +94,17 @@ $(function() {
         addChatMessage({ username, message });
         // tell server to execute 'new message' and send along one parameter
         socket.emit('new message', message);
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        console.log("User: "+username + ", Sent: "+message + ", At: "+ time+" EST");
+        var msg = message;
+        if(msg === "test"){
+          socket.emit("123");
+        }
+        else {
+          socket.emit('321');
+          console.log(msg);
+        }
       }
     }
   
@@ -229,11 +268,12 @@ $(function() {
     socket.on('login', (data) => {
       connected = true;
       // Display the welcome message
-      const message = 'Welcome to Socket.IO Chat – ';
+      const message = 'CHAT ROOM – Powered By Socket.IO';
       log(message, {
         prepend: true
       });
       addParticipantsMessage(data);
+      log("test");
     });
   
     // Whenever the server emits 'new message', update the chat body
