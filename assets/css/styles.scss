@@ -2,6 +2,13 @@
 ---
 @import "main";
 
+input {
+  -webkit-user-select: text; /* Chrome, Opera, Safari */
+  -moz-user-select: text; /* Firefox 2+ */
+  -ms-user-select: text; /* IE 10+ */
+  user-select: text; /* Standard syntax */
+}
+
 body {
   font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
   background: black;
@@ -88,7 +95,7 @@ p4
   
 }
 
-li {
+li.newli {
   font-size: large;
   padding: 8px;
   text-decoration: underline;
@@ -166,7 +173,7 @@ li {
 }
 
   //DROP DOWN MENU HEADERS
-  h3 {
+  h4 {
     text-decoration: underline;
   }
 
@@ -203,6 +210,11 @@ nav {
 
 h2 {
   position: fixed;
+}
+h2.bgChanger {
+  padding: 30px;
+  padding-left: 0px;
+  font-size: medium;
 }
 
 button.colorButton {
@@ -260,6 +272,14 @@ h1 {
   position: relative;
   font-family:'Times New Roman', Times, serif;
   font-weight:bold;
+}
+
+//chat header text and inner text 
+li.login.page {
+  text-decoration: none;
+}
+li.chat.page {
+  text-decoration: none;
 }
 
 
@@ -341,6 +361,9 @@ ul {
   padding-bottom: 15px;
   text-align: center;
   width: 400px;
+  //fixing mobile stuff 
+  
+
 }
 
 .login.page .title {

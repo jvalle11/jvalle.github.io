@@ -42,7 +42,7 @@ $(function main () {
       let message = '';
       let message2 = "";
       let blank = "";
-      if (data.numUsers === 1) {
+      if (data.numUsers == 1) {
         message2 += `it's just you`;
         message += "welcome " + username + " to the chat!";
       } else {
@@ -51,6 +51,8 @@ $(function main () {
       log(message);
       log(blank);
       log(message2);
+
+      
     }
   
     // Sets the client's username
@@ -73,14 +75,14 @@ $(function main () {
     const chatbot = () => {
       let message = "";
       let msg2 = "";
-      if (username){
+      if (!(data.numUsers==0)){
       message += "welcome " + username + " to my chat!";
       msg2 += "type -commands to see a list of all commands"; 
       socket.emit(message);
       socket.emit(msg2);
       }
     }
-    chatbot();
+   
     
   
     // Sends a chat message
@@ -92,13 +94,15 @@ $(function main () {
       if (message && connected) {
         $inputMessage.val('');
         addChatMessage({ username, message });
+        //TRYING TO MAKE CHATBOT
+
         // tell server to execute 'new message' and send along one parameter
         socket.emit('new message', message);
         var today = new Date();
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         console.log("User: "+username + ", Sent: "+message + ", At: "+ time+" EST");
         var msg = message;
-        if(msg === "test"){
+        if(message.length > 1){
           socket.emit("123");
         }
         else {

@@ -9,6 +9,11 @@
     
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   
 </head>
 
@@ -38,12 +43,12 @@
 var cancel = setInterval(incrementSeconds, 1000);
 
 
-document.body.style.backgroundColor = "green";
+document.body.style.backgroundColor = "darkblue";
 </script>
 <div class="colorStuff">
-<h2>Select Background Color!</h2>
+<h2 class="bgChanger">Background Color Selector!</h2>
 <input type="color" id="colorInput">
-<button id="colorButton" class="colorButton" value="click to change color!" onclick="changeColor()">Click to change color!
+<button id="colorButton" class="colorButton" value="click to change!" onclick="changeColor()">Click to Change!
  </div>
 
 <script>
