@@ -6,8 +6,7 @@ title: About
 
 Avid Computer Science and Video Game Enthusiast.
 
-<p2>Current Student at Arcadia University.<p2>
-<p3>3rd year Computer Science Major</p3>
+<p2>Current Computer Science Major at Arcadia University.<p2>
 <div class="clearText2">Proficient In;</div><br>
 <li class ="newli">Visual Studio Code</li>
 <li class ="newli">Metasploit</li>
