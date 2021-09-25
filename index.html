@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Main
 ---
 <!doctype html>
 <html>
@@ -11,22 +11,7 @@ title: Home
   </head>
   <body>
     <h1>{{ "Welcome !" | upcase }}</h1>
-    <ul class="pages">
-      <li class="chat page">
-        <div class="usernametext" id="usernametext">User Name:</div>
-        <div class="chatArea">
-          <ul class="messages"></ul>
-        </div>
-        <input class="inputMessage" placeholder="Type here..."/>
-      </li>
-      <li class="login page">
-        <div class="form">
-          <h3 class="title">Enter a username...</h3>
-          <input class="usernameInput" id="inputtext" type="text" maxlength="14" onsubmit="setname()"/>
-          <p id="demo"></p>
-        </div>
-      </li>
-    </ul>
+
 
     <script>
       //var inputname = " ";

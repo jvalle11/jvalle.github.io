@@ -4,6 +4,8 @@
   link: /about.html
 - name: Work
   link: /blog.html
+- name: Chat
+  link: /chat.html
 - name: Contact
   link: /staff.html
 - name: Resume

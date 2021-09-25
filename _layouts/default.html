@@ -1,5 +1,8 @@
 <!doctype html>
 <html>
+  <style>
+    
+  </style>
   
 <head>
     
@@ -20,6 +23,9 @@
 <p id="test"></p>
 <div class="counter" id="counter">Just Arrived.</div>
 
+<div class="cursor" data-cursor=""><div>
+</div></div>
+
 <script>
   var seconds = 0;
   var min = 0;
@@ -39,35 +45,17 @@
   // }
   }
 
-
 var cancel = setInterval(incrementSeconds, 1000);
 
-
-document.body.style.backgroundColor = "darkblue";
-</script>
-<div class="colorStuff">
-<h2 class="bgChanger">Background Color Selector!</h2>
-<input type="color" id="colorInput">
-<button id="colorButton" class="colorButton" value="click to change!" onclick="changeColor()">Click to Change!
- </div>
-
-<script>
-  document.body.style.backgroundImage = "";
-  function changeColor(){
-    let color = document.getElementById("colorInput").value;
-    document.body.style.backgroundColor = color;
-  }
 </script>
 
 </html>
-
   
 <body>
     {% include navigation.html %}
     {{ content }}
   
 </body>
-
 <!---
 <h2 class="masterhead">
   {{ content }}

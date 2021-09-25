@@ -11,18 +11,32 @@ input {
 
 body {
   font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
-  background: black;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   //background-image: url(../images/nfc7cj2.jpeg);
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size:400% 400%;
   // background-image: linear-gradient(to bottom right,red,orange,yellow,green,blue,indigo,violet);
   height:100vh;
   //color: #ffffff;
+  animation: gradient 8s ease infinite;
   padding: 0;
   margin: 0;
   overflow-y: scroll;  
 
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 //hide main scrollbar
 body::-webkit-scrollbar {
@@ -173,11 +187,12 @@ li.newli {
 }
 
   //DROP DOWN MENU HEADERS
-  h4 {
-    text-decoration: underline;
-  }
+h4 
+{
+  text-decoration: underline;
+}
 
-//a element
+//a element / NAVIGATION CURRENT TAB
 a { 
   color:rgb(255, 255, 255);
   // display: block;
@@ -185,9 +200,11 @@ a {
   // padding: 10px;
   // border: 1px solid white;
 }
+
 a:hover{
   color: rgb(255, 0, 0);
   text-decoration: underline;
+  
 }
 //tabs at top of page
 nav a {
@@ -207,6 +224,7 @@ nav {
   padding: 10px;
   list-style-type: none;
   display: flex;
+  font-size: large;
 }
 
 //POST PAGE projects tab
@@ -397,10 +415,10 @@ ul {
 /* Login Page */
 
 .login.page {
-  background-color: #000;
+  background-color: rgb(87, 63, 63);
   margin-top: 120px;
-  height: 500px;
-  width: 100;
+  height: 600px;
+  width: 1200px;
 }
 
 .login.page .form {
@@ -540,5 +558,8 @@ progress::-moz-progress-bar {
   from {background-color: red;}
   to {background-color: yellow;}
 }
+
+//CODE PEN CURSOR STUFF
+
 
 
