@@ -415,7 +415,7 @@ ul {
 /* Login Page */
 
 .login.page {
-  background-color: rgb(87, 63, 63);
+  background-color: #383838;
   margin-top: 120px;
   height: 600px;
   width: 1200px;
@@ -561,5 +561,55 @@ progress::-moz-progress-bar {
 
 //CODE PEN CURSOR STUFF
 
+.box {
+	display: flex;
+  zoom: 1.5;
+  margin-left: 25%;
+  margin-top: 15%;
+}
 
+.box .inner {
+	width: 400px;
+	height: 200px;
+	line-height: 200px;
+	font-size: 4em;
+	font-family: sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.box .inner:first-child {
+	background-color: rgb(213, 213, 213);
+	color: rgb(94, 94, 94);
+	transform-origin: right;
+	transform: perspective(100px) rotateY(-15deg);
+}
+
+.box .inner:last-child {
+	background-color: rgb(163, 163, 163);
+	color: rgb(255, 255, 255);
+	transform-origin: left;
+	transform: perspective(100px) rotateY(15deg);
+}
+
+.box .inner span {
+	position: absolute;
+	animation: marquee 5s linear infinite;
+}
+
+.box .inner:first-child span {
+	animation-delay: 2.5s;
+	left: -100%;
+}
+
+@keyframes marquee {
+	from {
+		left: 100%;
+	}
+
+	to {
+		left: -100%;
+	}
+}
 
