@@ -1,12 +1,12 @@
-- name: Main
+- name: .MAIN
   link: /
-- name: Info
+- name: .INFO
   link: /about.html
-- name: Work
+- name: .WORK
   link: /blog.html
-- name: Chat
+- name: .CHAT
   link: /chat.html
-- name: Contact
-  link: /staff.html
-- name: Resume
+- name: .RESUME
   link: /resume.html
+- name: .CONTACT
+  link: /staff.html

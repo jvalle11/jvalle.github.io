@@ -65,11 +65,7 @@ body::-webkit-scrollbar {
   text-align: center;
   position: relative;
 }
-//current page
-.current {
-  color: rgb(255, 0, 0);
 
-}
 
 //context in page 
 p{
@@ -204,27 +200,46 @@ a {
 a:hover{
   color: rgb(255, 0, 0);
   text-decoration: underline;
+  animation: fadeIn 1.5s;
   
+}
+
+@keyframes bubble {
+  0% {left: 100%;}
+  100% {left: 0%;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 //tabs at top of page
 nav a {
   color:rgb(255, 255, 255);
-  display: block;
+  //display: block;
   text-decoration: none;
   padding: 10px;
   border: 1px solid white;
+  animation: bubble 2s linear infinite;
 }
+//current page
+.current {
 
+  //color: rgb(255, 0, 0);
+
+}
 
 //tabs
 nav {
-  text-align: right;
+  text-align: center;
   letter-spacing: 2.5px;
-  font-family:'Times New Roman', Times, serif;
+  font-family:'Montserrat', sans-serif;
+  
   padding: 10px;
+  padding-top: 25px;
   list-style-type: none;
-  display: flex;
-  font-size: large;
+  display: block;
+  font-size: medium;
 }
 
 //POST PAGE projects tab
@@ -289,9 +304,12 @@ h2 {
   position: fixed;
 }
 h2.bgChanger {
-  padding: 30px;
+  position: relative;
+  font-weight: 400;
   padding-left: 0px;
-  font-size: medium;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: large;
 }
 
 button.colorButton {
@@ -545,21 +563,36 @@ progress::-webkit-progress-bar {
   border-radius: 7px;
 }
 progress::-webkit-progress-value {
-  background-image: linear-gradient(90deg,#ffd33d,#ea4aaa 17%,#b34bff 34%,#01feff 51%,#ffd33d 68%,#ea4aaa 85%,#b34bff);
+  background: linear-gradient(90deg,#ffd33d,#ea4aaa 17%,#b34bff 34%,#01feff 51%,#ffd33d 68%,#ea4aaa 85%,#b34bff);
   border-radius: 7px;
   box-shadow: 1px 1px 5px 3px rgba(255, 255, 255, 0.8);
-  animation:alternate 0.2s linear infinite;
+  animation: alternate 8s ease infinite;
 }
 progress::-moz-progress-bar {
   /* style rules */
   
 }
-@keyframes alternate  {
-  from {background-color: red;}
-  to {background-color: yellow;}
+// @keyframes alternate  {
+//   from {background-color: red;}
+//   to {background-color: yellow;}
+// }
+
+@keyframes alternate {
+	0% {
+		background-position: 0% 50%;
+    color:#000;
+	}
+	50% {
+		background-position: 100% 50%;
+    color: #ccc;
+	}
+	100% {
+		background-position: 0% 50%;
+    color: white;
+	}
 }
 
-//CODE PEN CURSOR STUFF
+//CODE PEN HOME PAGE CORNER SLIDE
 
 .box {
 	display: flex;
@@ -611,5 +644,29 @@ progress::-moz-progress-bar {
 	to {
 		left: -100%;
 	}
+}
+
+//mouse tracker on main page
+html {
+  //cursor: none;
+  overflow: hidden;
+  
+}
+
+.colorbox {
+  position: absolute;
+  animation: rotate 2.5s infinite linear;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+  size: 100px;
+
+ 
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
